@@ -5,8 +5,10 @@ import lombok.Data;
 
 @Data
 @TableName("student")
-public class Student {
+public class Student  extends BaseEntity{
     private String name;
-    private Boolean sex;
-    private Integer score;
+    private sex sex;
+}
+enum sex{
+    男,女
 }
