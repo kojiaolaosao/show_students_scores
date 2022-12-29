@@ -4,6 +4,7 @@ import com.showscores.common.lang.Result;
 import com.showscores.entity.Student;
 import com.showscores.service.StudentService;
 import com.showscores.vo.GradeRecordVO;
+import com.showscores.vo.RecordVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,9 +22,5 @@ public class StudentController {
         return Result.succ(studentService.list());
     }
 
-    @PostMapping("/addScoresList")
-    public Result addScoresList(@RequestBody List<GradeRecordVO> gradeRecordVOs){
-        System.out.println(gradeRecordVOs);
-        return null;
-    }
+
 }

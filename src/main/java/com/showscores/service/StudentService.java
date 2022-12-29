@@ -5,5 +5,6 @@ import com.showscores.entity.Student;
 import org.springframework.stereotype.Service;
 
 public interface StudentService extends IService<Student> {
+    Student existStudent(Student student);
 
 }

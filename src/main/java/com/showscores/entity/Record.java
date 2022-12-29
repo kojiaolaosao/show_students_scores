@@ -4,10 +4,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("student")
-public class Student  extends BaseEntity{
-    private String name;
+@TableName("record")
+public class Record extends BaseEntity{
     private Integer grade;
     private Integer clazz;
-//    private String student_code;
+    private String title;
+    private String info;
 }

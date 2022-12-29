@@ -3,21 +3,37 @@ package com.showscores.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.security.Principal;
+
 @Data
 @TableName("score_records")
 public class GradeRecord extends BaseEntity {
     //    姓名	总分	语文	数学	英语	附加	物理	地理	历史	政治	化学	生物	名次
+    private Long studentId;
+    private Long recordId;
+
+    private Long studentCode;
     private String name;
-    private Integer total_score;
+
+    private Integer totalScore;
+
     private Integer languages;
     private Integer maths;
     private Integer englishes;
     private Integer addition;
-    private Integer physicals;
-    private Integer geography;
-    private Integer history;
-    private Integer politics;
-    private Integer chemicals;
-    private Integer biological;
-    private Integer student_id;
+    private Integer physicals;//物理
+    private Integer history;//历史
+
+    private Integer geography;//地理
+    private Integer geographyReal;
+    private Integer politics;//政治
+    private Integer politicsReal;//政治
+    private Integer chemicals;//化学
+    private Integer chemicalsReal;//化学
+    private Integer biological;//生物
+    private Integer biologicalReal;//生物
+
+    private Integer classRank;
+    private Integer gradeRank;
+
 }
