@@ -6,6 +6,12 @@ import com.showscores.entity.Record;
 import com.showscores.entity.Student;
 import com.showscores.vo.PageVO;
 
+import java.util.List;
+
 public interface RecordService extends IService<Record> {
     public Page<Record> getPage(PageVO pageVO);
+
+    Boolean del(Long id);
+
+    Page<Record> getPageOrderByTime(PageVO pageVO);
 }

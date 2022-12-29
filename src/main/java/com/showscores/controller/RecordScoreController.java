@@ -44,8 +44,18 @@ public class RecordScoreController {
         return Result.succ(recordService.getPage(pageVO));
     }
 
+    @PostMapping("getPageOrderByTime")
+    public Result<Page<Record>> getPageOrderByTime(@RequestBody PageVO pageVO){
+        return Result.succ(recordService.getPageOrderByTime(pageVO));
+    }
+
     @PostMapping("updateRecord")
     public Result<Boolean> updateRecord(@RequestBody Record record){
         return Result.succ(recordService.updateById(record));
+    }
+
+    @PostMapping("delRecord/{id}")
+    public Result<Boolean> delRecordById(@PathVariable Long id){
+        return Result.succ(recordService.del(id));
     }
 }
