@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.showscores.entity.Record;
 import com.showscores.entity.Student;
 import com.showscores.vo.PageVO;
+import com.showscores.vo.RecordVO;
 
 import java.util.List;
 

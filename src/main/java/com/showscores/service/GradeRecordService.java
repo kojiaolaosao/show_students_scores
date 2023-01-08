@@ -7,6 +7,7 @@ import com.showscores.vo.AllScoreVO;
 import com.showscores.vo.RecordVO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GradeRecordService extends IService<GradeRecord> {
 

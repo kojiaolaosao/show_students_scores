@@ -5,6 +5,7 @@ import com.showscores.common.lang.Result;
 import com.showscores.entity.Record;
 import com.showscores.service.GradeRecordService;
 import com.showscores.service.RecordService;
+import com.showscores.vo.AllScoreVO;
 import com.showscores.vo.PageVO;
 import com.showscores.vo.RecordVO;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -57,5 +58,15 @@ public class RecordScoreController {
     @PostMapping("delRecord/{id}")
     public Result<Boolean> delRecordById(@PathVariable Long id){
         return Result.succ(recordService.del(id));
+    }
+
+    @GetMapping("getScores/{id}")
+    public Result<RecordVO> getScoresByRecords(@PathVariable Long id){
+        return Result.succ(gradeRecordService.getScoreListByRecordId(id));
+    }
+
+    @GetMapping("allScore/{id}")
+    public Result<AllScoreVO> getAllScore(@PathVariable Long id){
+        return Result.succ(gradeRecordService.getAllScore(id));
     }
 }

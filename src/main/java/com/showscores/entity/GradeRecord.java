@@ -2,8 +2,11 @@ package com.showscores.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.jetbrains.annotations.NotNull;
+import sun.reflect.generics.tree.ReturnType;
 
-import java.security.Principal;
+import java.lang.reflect.Field;
+import java.util.List;
 
 @Data
 @TableName("score_records")
@@ -35,5 +38,13 @@ public class GradeRecord extends BaseEntity {
 
     private Integer classRank;
     private Integer gradeRank;
+
+    public void addFieldToList(@NotNull List<Object> list, @NotNull Field field){
+        try {
+            list.add(field.get(this));
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

@@ -15,6 +15,7 @@ import com.showscores.service.GradeRecordService;
 import com.showscores.service.RecordService;
 import com.showscores.service.StudentService;
 import com.showscores.vo.PageVO;
+import com.showscores.vo.RecordVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -49,6 +50,8 @@ public class RecordServiceImpl extends ServiceImpl<RecordMapper, Record> impleme
     public Page<Record> getPageOrderByTime(PageVO pageVO) {
         Page<Record> page = pageVO.getPage();
         QueryWrapper<Record> wrapper = new QueryWrapper<Record>().orderByDesc("created_time");
+        wrapper=pageVO.getWrapper(wrapper);
+        wrapper.and(w->w.like("title",pageVO.getSearch()).or().like("info",pageVO.getSearch()));
         return page(page,wrapper);
     }
 
